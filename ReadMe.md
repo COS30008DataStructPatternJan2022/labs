@@ -10,4 +10,4 @@ Remember to check in regulary for code update.
 
 See the image below for how to download/pull source code into your local machine.
 
-![Github Howto](@ducmle/../../lectures/images/Github-howto-sourcecode.png)
+![Github Howto](/lectures/images/Github-howto-sourcecode.png)
