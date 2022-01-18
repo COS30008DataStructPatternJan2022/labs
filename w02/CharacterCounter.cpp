@@ -4,7 +4,7 @@
 #include "CharacterCounter.h"
 
 using namespace std;
-
+/* IMPLEMENTATION  */
 CharacterCounter::CharacterCounter()
 {
   for (size_t i = 0; i < 256; i++)
