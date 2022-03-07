@@ -5,11 +5,11 @@
 
 using namespace std;
 
-// #define P1
-//#define P2
-//#define P3
-//#define P4
-//#define P5
+#define P1
+#define P2
+#define P3
+#define P4
+#define P5
 
 #ifdef P1
 
@@ -17,55 +17,55 @@ using namespace std;
 
 void test1()
 {
-    using StringNode = DoublyLinkedList<string>;
+  using StringNode = DoublyLinkedList<string>;
 
-    cout << "Test:" << endl;
-    cout << "\tpush_front()\n"
-         << "\toperator*()\n"
-         << "\tgetPrevious()\n"
-         << "\tgetNext()" << endl;
+  cout << "Test:" << endl;
+  cout << "\tpush_front()\n"
+       << "\toperator*()\n"
+       << "\tgetPrevious()\n"
+       << "\tgetNext()" << endl;
 
-    string s2( "Two" );
-    string s3( "Three" );
-    
-    StringNode n1( "One" );
-    StringNode n2( s2 );
-    StringNode n3( s3 );
-    StringNode n4( "Four" );
-    
-    n1.push_front( n4 );
-    n1.push_front( n3 );
-    n1.push_front( n2 );
-    
-    cout << "The nodes (forwards):" << endl;
-    
-    const StringNode* pn = &n1;
-    
-    do
-    {
-        cout << "(";
-        cout << *(pn->getPrevious());
-        cout << "," << **pn << ",";
-        cout << *(pn->getNext());
-        cout << ")" << endl;
-        
-        pn = &pn->getNext();
-    } while ( pn != &n1 );
-    
-    cout << "The nodes (backwards):" << endl;
+  string s2("Two");
+  string s3("Three");
 
-    pn = &n1;
-    
-    do
-    {
-        cout << "(";
-        cout << *(pn->getPrevious());
-        cout << "," << **pn << ",";
-        cout << *(pn->getNext());
-        cout << ")" << endl;
-        
-        pn = &pn->getPrevious();
-    } while ( pn != &n1 );
+  StringNode n1("One");
+  StringNode n2(s2);
+  StringNode n3(s3);
+  StringNode n4("Four");
+
+  n1.push_front(n4);
+  n1.push_front(n3);
+  n1.push_front(n2);
+
+  cout << "The nodes (forwards):" << endl;
+
+  const StringNode *pn = &n1;
+
+  do
+  {
+    cout << "(";
+    cout << *(pn->getPrevious());
+    cout << "," << **pn << ",";
+    cout << *(pn->getNext());
+    cout << ")" << endl;
+
+    pn = &pn->getNext();
+  } while (pn != &n1);
+
+  cout << "The nodes (backwards):" << endl;
+
+  pn = &n1;
+
+  do
+  {
+    cout << "(";
+    cout << *(pn->getPrevious());
+    cout << "," << **pn << ",";
+    cout << *(pn->getNext());
+    cout << ")" << endl;
+
+    pn = &pn->getPrevious();
+  } while (pn != &n1);
 }
 
 #endif
@@ -76,52 +76,52 @@ void test1()
 
 void test2()
 {
-    using StringNode = DoublyLinkedList<string>;
-    
-    cout << "Test:" << endl;
-    cout << "\tpush_back()" << endl;
+  using StringNode = DoublyLinkedList<string>;
 
-    string s2( "Two" );
-    string s3( "Three" );
-    
-    StringNode n1( "One" );
-    StringNode n2( s2 );
-    StringNode n3( s3 );
-    StringNode n4( "Four" );
-    
-    n1.push_back( n4 );
-    n1.push_back( n3 );
-    n1.push_back( n2 );
-        
-    const StringNode* pn = &n1;
-    
-    cout << "The nodes (forwards):" << endl;
+  cout << "Test:" << endl;
+  cout << "\tpush_back()" << endl;
 
-    do
-    {
-        cout << "(";
-        cout << *(pn->getPrevious());
-        cout << "," << **pn << ",";
-        cout << *(pn->getNext());
-        cout << ")" << endl;
-        
-        pn = &pn->getNext();
-    } while ( pn != &n1 );
-        
-    cout << "The nodes (backwards):" << endl;
+  string s2("Two");
+  string s3("Three");
 
-    pn = &n1;
-    
-    do
-    {
-        cout << "(";
-        cout << *(pn->getPrevious());
-        cout << "," << **pn << ",";
-        cout << *(pn->getNext());
-        cout << ")" << endl;
-        
-        pn = &pn->getPrevious();
-    } while ( pn != &n1 );
+  StringNode n1("One");
+  StringNode n2(s2);
+  StringNode n3(s3);
+  StringNode n4("Four");
+
+  n1.push_back(n4);
+  n1.push_back(n3);
+  n1.push_back(n2);
+
+  const StringNode *pn = &n1;
+
+  cout << "The nodes (forwards):" << endl;
+
+  do
+  {
+    cout << "(";
+    cout << *(pn->getPrevious());
+    cout << "," << **pn << ",";
+    cout << *(pn->getNext());
+    cout << ")" << endl;
+
+    pn = &pn->getNext();
+  } while (pn != &n1);
+
+  cout << "The nodes (backwards):" << endl;
+
+  pn = &n1;
+
+  do
+  {
+    cout << "(";
+    cout << *(pn->getPrevious());
+    cout << "," << **pn << ",";
+    cout << *(pn->getNext());
+    cout << ")" << endl;
+
+    pn = &pn->getPrevious();
+  } while (pn != &n1);
 }
 
 #endif
@@ -132,56 +132,56 @@ void test2()
 
 void test3()
 {
-    using StringNode = DoublyLinkedList<string>;
-    
-    cout << "Test:" << endl;
-    cout << "\tisolate()" << endl;
+  using StringNode = DoublyLinkedList<string>;
 
-    string s2( "Two" );
-    string s3( "Three" );
-    
-    StringNode n1( "One" );
-    StringNode n2( s2 );
-    StringNode n3( s3 );
-    StringNode n4( "Four" );
-    
-    n1.push_front( n4 );
-    n1.push_front( n3 );
-    n1.push_front( n2 );
-    
-    cout << "The nodes (forwards):" << endl;
-    
-    const StringNode* pn = &n1;
-    
-    do
-    {
-        cout << "(";
-        cout << *(pn->getPrevious());
-        cout << "," << **pn << ",";
-        cout << *(pn->getNext());
-        cout << ")" << endl;
-        
-        pn = &pn->getNext();
-    } while ( pn != &n1 );
-    
-    cout << "isolate " << *n3 << endl;
-    
-    n3.isolate();
-    
-    cout << "The nodes (backwards):" << endl;
+  cout << "Test:" << endl;
+  cout << "\tisolate()" << endl;
 
-    pn = &n1;
-    
-    do
-    {
-        cout << "(";
-        cout << *(pn->getPrevious());
-        cout << "," << **pn << ",";
-        cout << *(pn->getNext());
-        cout << ")" << endl;
-        
-        pn = &pn->getPrevious();
-    } while ( pn != &n1 );
+  string s2("Two");
+  string s3("Three");
+
+  StringNode n1("One");
+  StringNode n2(s2);
+  StringNode n3(s3);
+  StringNode n4("Four");
+
+  n1.push_front(n4);
+  n1.push_front(n3);
+  n1.push_front(n2);
+
+  cout << "The nodes (forwards):" << endl;
+
+  const StringNode *pn = &n1;
+
+  do
+  {
+    cout << "(";
+    cout << *(pn->getPrevious());
+    cout << "," << **pn << ",";
+    cout << *(pn->getNext());
+    cout << ")" << endl;
+
+    pn = &pn->getNext();
+  } while (pn != &n1);
+
+  cout << "isolate " << *n3 << endl;
+
+  n3.isolate();
+
+  cout << "The nodes (backwards):" << endl;
+
+  pn = &n1;
+
+  do
+  {
+    cout << "(";
+    cout << *(pn->getPrevious());
+    cout << "," << **pn << ",";
+    cout << *(pn->getNext());
+    cout << ")" << endl;
+
+    pn = &pn->getPrevious();
+  } while (pn != &n1);
 }
 
 #endif
@@ -192,56 +192,56 @@ void test3()
 
 void test4()
 {
-    using StringNode = DoublyLinkedList<string>;
-    
-    cout << "Test:" << endl;
-    cout << "\tswap()" << endl;
+  using StringNode = DoublyLinkedList<string>;
 
-    string s2( "Two" );
-    string s3( "Three" );
-    
-    StringNode n1( "One" );
-    StringNode n2( s2 );
-    StringNode n3( s3 );
-    StringNode n4( "Four" );
+  cout << "Test:" << endl;
+  cout << "\tswap()" << endl;
 
-    n1.push_front( n4 );
-    n1.push_front( n3 );
-    n1.push_front( n2 );
-    
-    cout << "The nodes (forwards):" << endl;
-    
-    const StringNode* pn = &n1;
-    
-    do
-    {
-        cout << "(";
-        cout << *(pn->getPrevious());
-        cout << "," << **pn << ",";
-        cout << *(pn->getNext());
-        cout << ")" << endl;
-        
-        pn = &pn->getNext();
-    } while ( pn != &n1 );
-    
-    cout << "swap " << *n3 << " <=> " << *n1 << endl;
-    
-    n3.swap( n1 );
-    
-    cout << "The nodes (forwards):" << endl;
+  string s2("Two");
+  string s3("Three");
 
-    pn = &n1;
-    
-    do
-    {
-        cout << "(";
-        cout << *(pn->getPrevious());
-        cout << "," << **pn << ",";
-        cout << *(pn->getNext());
-        cout << ")" << endl;
-        
-        pn = &pn->getNext();
-    } while ( pn != &n1 );
+  StringNode n1("One");
+  StringNode n2(s2);
+  StringNode n3(s3);
+  StringNode n4("Four");
+
+  n1.push_front(n4);
+  n1.push_front(n3);
+  n1.push_front(n2);
+
+  cout << "The nodes (forwards):" << endl;
+
+  const StringNode *pn = &n1;
+
+  do
+  {
+    cout << "(";
+    cout << *(pn->getPrevious());
+    cout << "," << **pn << ",";
+    cout << *(pn->getNext());
+    cout << ")" << endl;
+
+    pn = &pn->getNext();
+  } while (pn != &n1);
+
+  cout << "swap " << *n3 << " <=> " << *n1 << endl;
+
+  n3.swap(n1);
+
+  cout << "The nodes (forwards):" << endl;
+
+  pn = &n1;
+
+  do
+  {
+    cout << "(";
+    cout << *(pn->getPrevious());
+    cout << "," << **pn << ",";
+    cout << *(pn->getNext());
+    cout << ")" << endl;
+
+    pn = &pn->getNext();
+  } while (pn != &n1);
 }
 
 #endif
@@ -253,86 +253,85 @@ void test4()
 
 void test5()
 {
-    using StringNode = DoublyLinkedList<string>;
-    using StringIterator = DoublyLinkedListIterator<string>;
+  using StringNode = DoublyLinkedList<string>;
+  using StringIterator = DoublyLinkedListIterator<string>;
 
-    StringNode n1( "One" );
-    StringNode n2( "Two" );
-    StringNode n3( "Three" );
-    StringNode n4( "Four" );
-    StringNode n5( "Five" );
-    StringNode n6( "Six" );
-    
-    n1.push_back( n6 );
-    n1.push_back( n5 );
-    n1.push_back( n4 );
-    n1.push_back( n3 );
-    n1.push_back( n2 );
-    
-    StringIterator iter( &n1 );
-    
-    iter++;
-    
-    cout << "Forward iteration I:" << endl;
-    for ( --iter; iter != iter.end(); iter++ )
-        cout << *iter << endl;
-    
-    cout << "Backward iteration I:" << endl;
-    for ( --iter; iter != iter.rend(); iter-- )
-        cout << *iter << endl;
-    
-    cout << "Forward iteration II:" << endl;
-    for ( iter = iter.begin(); iter != iter.end(); ++iter )
-        cout << *iter << endl;
-    
-    cout << "Backward iteration II:" << endl;
-    for ( iter = iter.rbegin(); iter != iter.rend(); --iter )
-        cout << *iter << endl;
-    
-    StringIterator iter2( nullptr );
+  StringNode n1("One");
+  StringNode n2("Two");
+  StringNode n3("Three");
+  StringNode n4("Four");
+  StringNode n5("Five");
+  StringNode n6("Six");
 
-    cout << "Iterator tests:" << endl;
+  n1.push_back(n6);
+  n1.push_back(n5);
+  n1.push_back(n4);
+  n1.push_back(n3);
+  n1.push_back(n2);
 
-    if ( iter2 == iter2.end() )
-        cout << "Yes" << endl;
-    else
-        cout << "No" << endl;
-    
-    if ( iter2.begin() == iter2.end() )
-        cout << "Yes" << endl;
-    else
-        cout << "No" << endl;
-    
-    if ( iter2.rbegin() == iter2.rend() )
-        cout << "Yes" << endl;
-    else
-        cout << "No" << endl;
+  StringIterator iter(&n1);
+
+  iter++;
+
+  cout << "Forward iteration I:" << endl;
+  for (--iter; iter != iter.end(); iter++)
+    cout << *iter << endl;
+
+  cout << "Backward iteration I:" << endl;
+  for (--iter; iter != iter.rend(); iter--)
+    cout << *iter << endl;
+
+  cout << "Forward iteration II:" << endl;
+  for (iter = iter.begin(); iter != iter.end(); ++iter)
+    cout << *iter << endl;
+
+  cout << "Backward iteration II:" << endl;
+  for (iter = iter.rbegin(); iter != iter.rend(); --iter)
+    cout << *iter << endl;
+
+  StringIterator iter2(nullptr);
+
+  cout << "Iterator tests:" << endl;
+
+  if (iter2 == iter2.end())
+    cout << "Yes" << endl;
+  else
+    cout << "No" << endl;
+
+  if (iter2.begin() == iter2.end())
+    cout << "Yes" << endl;
+  else
+    cout << "No" << endl;
+
+  if (iter2.rbegin() == iter2.rend())
+    cout << "Yes" << endl;
+  else
+    cout << "No" << endl;
 }
 
 #endif
 
-
 int main()
 {
 #ifdef P1
-    test1();
+  test1();
 #endif
 
 #ifdef P2
-    test2();
+  test2();
 #endif
-    
+
 #ifdef P3
-    test3();
+  test3();
 #endif
 
 #ifdef P4
-    test4();
+  test4();
 #endif
-    
+
 #ifdef P5
-    test5();
+  test5();
 #endif
-    
-    return 0;
+
+  return 0;
 }
