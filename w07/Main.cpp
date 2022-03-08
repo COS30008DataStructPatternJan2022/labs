@@ -5,10 +5,10 @@
 
 using namespace std;
 
-#define P1
-#define P2
-#define P3
-#define P4
+// #define P1
+// #define P2
+// #define P3
+// #define P4
 #define P5
 
 #ifdef P1
@@ -37,6 +37,11 @@ void test1()
   n1.push_front(n3);
   n1.push_front(n2);
 
+/* 
+  n1.push_front(n4);
+  n4.push_front(n3);
+  n3.push_front(n2);
+ */
   cout << "The nodes (forwards):" << endl;
 
   const StringNode *pn = &n1;

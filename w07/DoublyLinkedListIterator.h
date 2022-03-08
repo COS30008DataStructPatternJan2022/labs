@@ -11,9 +11,9 @@ class DoublyLinkedListIterator
 private:
   enum class States
   {
-    BEFORE,
-    DATA,
-    AFTER
+    BEFORE,   // BEFORE start node of list
+    DATA,     // among the (data) nodes
+    AFTER     // AFTER end node of list
   };
 
   using Node = DoublyLinkedList<T>;
@@ -70,7 +70,7 @@ public:
 
       // Is current previous of root (last element forward)?
       // Current cannot be nullptr as we are in state DATA.
-      if (fCurrent == &fRoot->getPrevious())
+      if (fCurrent == &fRoot->getPrevious())  // see (operator --, the case where fState = AFTER && fCurrent != nullptr)
       {
         // Yes, we are done
         fCurrent = nullptr;
@@ -125,7 +125,6 @@ public:
 
       // Is current root (last element backwards)?
       // Current cannot be nullptr as we are in state DATA.
-
       if (fCurrent == fRoot)
       {
         // Yes, we are done
