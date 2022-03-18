@@ -36,7 +36,7 @@ public:
 
     fPrevious = &aNode; // this' backward pointer becomes aNode
 
-    return aNode; // last node inserted
+    return aNode; // last node inserted (fluent interface API)
   }
 
   DoublyLinkedList &push_back(DoublyLinkedList &aNode)
