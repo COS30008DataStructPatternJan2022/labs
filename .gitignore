@@ -10,5 +10,5 @@ w04/textqueries
 w08*
 #w09
 #w10
-w11/*.h
+#w11/*.h
 w12
